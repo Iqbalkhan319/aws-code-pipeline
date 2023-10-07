@@ -1,2 +1,2 @@
 # aws-code-pipeline
-auto build check
+auto build check.
