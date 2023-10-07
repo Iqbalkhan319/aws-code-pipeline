@@ -27,18 +27,17 @@ phases:
       # - command
   pre_build:
     commands:
-      - pip install -r day-14/simple-python-app/requirements.txt
+      - pip install -r requirements.txt
       # - command
   build:
     commands:
-      - cd day-14/simple-python-app
       - echo "Building Docker Image"
       - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_URL"
       - docker build -t "$DOCKER_URL/$DOCKER_USERNAME/flask-app:latest" .
       - docker push "$DOCKER_URL/$DOCKER_USERNAME/flask-app:latest"
   post_build:
     commands:
-      - echo "Build is successfull"
+      - echo "Build is successful"
       # - command
 #reports:
   #report-name-or-arn:
